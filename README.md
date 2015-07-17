@@ -9,6 +9,7 @@ A continued implementation of the original `0.1.3` version of BitcoinJS used by 
 - Clean: Pure JavaScript, concise code, easy to read.
 - Compatible: Works on Node.js and all modern browsers.
 - Powerful: Support for advanced features, such as multi-sig, HD Wallets.
+- Secure: Strong random number generation, PGP signed releases.
 - Principled: No support for browsers with crap RNG (IE < 11)
 - Standardized: Node community coding style, Browserify, Node's stdlib and Buffers.
 - Fast: Optimized code, uses typed arrays instead of byte arrays for performance.
@@ -70,7 +71,7 @@ You will then be able to load `foobar.js` into your browser, with each of the de
 
 ## Projects utilizing PotcoinJS
 
-- [Potwallet](https://potwallet.com)
+- [PotWallet](https://potwallet.com)
 
 
 ## Contributors
