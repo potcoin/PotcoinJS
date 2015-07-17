@@ -3,6 +3,10 @@
 The pure JavaScript Potcoin library for node.js and browsers.
 A continued implementation of the original `0.1.3` version of BitcoinJS used by over a million wallet users; the backbone for almost all Bitcoin web wallets in production today.
 
+PotcoinJS is a modified version of BitcoinJS 1.x. PotcoinJS is a javascript library that can handle most of the functionality necessary to build a Potcoin app. It contains routines to parse, convert, encode and decode various formats like base58check and wif, build transaction, and wrangle scripts. Most significantly, it does all the nasty ECDSA-cryptography heavy lifting necessary to sign and verify transactions.
+
+However, PocoinJS does not talk to potcoin nodes or handle the blockchain in any way. That means, in order to create a wallet, your app will need to communicate with a potcoin node or blockchain (ex: potchain.net API) from which your app can retrieve unspent transaction outputs, propogate transactions and verify them.
+
 
 ## Features
 
