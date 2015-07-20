@@ -12523,7 +12523,7 @@ module.exports={
 },{}],87:[function(require,module,exports){
 var potcoin = {
   base58: require('bs58'),
-  potcoin: require('bitcoinjs-lib'),
+  potcoin: require('potcoinjs-lib'),
   ecurve: require('ecurve'),
   BigInteger: require('bigi'),
   Buffer: require('buffer')
@@ -12531,5 +12531,5 @@ var potcoin = {
 
 module.exports = potcoin
 
-},{"bigi":3,"bitcoinjs-lib":43,"bs58":77,"buffer":54,"ecurve":80}]},{},[87])(87)
+},{"bigi":3,"potcoinjs-lib":43,"bs58":77,"buffer":54,"ecurve":80}]},{},[87])(87)
 });
