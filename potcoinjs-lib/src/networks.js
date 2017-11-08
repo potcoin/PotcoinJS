@@ -7,9 +7,9 @@ var networks = {
       public: 0x213045C1, // Ppub
       private: 0x213045C0 // Pprv
     },
-    pubKeyHash: 0x38, //0xfd, // https://github.com/potcoin/potcoin/blob/master/src/script.h#L206
+    pubKeyHash: 0x37, //0xfd, // https://github.com/potcoin/potcoin/blob/master/src/script.h#L206
     scriptHash: 0x05,
-    wif: 0xB7,
+    wif: 0xBD,
     dustThreshold: 0,
     dustSoftThreshold: 100000,
     feePerKb: 100000, // https://github.com/potcoin/potcoin/blob/master/src/main.cpp#L53
