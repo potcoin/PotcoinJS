@@ -1,6 +1,6 @@
 {
   "name": "potcoinjs-lib",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "description": "Client-side Potcoin JavaScript library",
   "main": "./src/index.js",
   "dependencies": {
