@@ -10,7 +10,7 @@ var ECSignature = require('./ecsignature')
 var Script = require('./script')
 
 function Transaction () {
-  this.version = 1
+  this.version = 4
   this.locktime = 0
   this.ins = []
   this.outs = []
@@ -250,7 +250,7 @@ Transaction.prototype.hashForSignature = function (inIndex, prevOutScript, hashT
   var hashTypeBuffer = new Buffer(4)
   hashTypeBuffer.writeInt32LE(hashType, 0)
 
-  var buffer = Buffer.concat([txTmp.toBuffer(), hashTypeBuffer])
+  var buffer = Buffer.concat([txTmp.toBuffer(true), hashTypeBuffer])
   return crypto.hash256(buffer)
 }
 
@@ -263,7 +263,7 @@ Transaction.prototype.getId = function () {
   return bufferutils.reverse(this.getHash()).toString('hex')
 }
 
-Transaction.prototype.toBuffer = function () {
+Transaction.prototype.toBuffer = function (exceptTimestamp) {
   function scriptSize (script) {
     var length = script.buffer.length
 
@@ -271,7 +271,7 @@ Transaction.prototype.toBuffer = function () {
   }
 
   var buffer = new Buffer(
-    8 +
+    8 + (exceptTimestamp?0:4) +
     bufferutils.varIntSize(this.ins.length) +
     bufferutils.varIntSize(this.outs.length) +
     this.ins.reduce(function (sum, input) { return sum + 40 + scriptSize(input.script) }, 0) +
@@ -318,6 +318,9 @@ Transaction.prototype.toBuffer = function () {
   })
 
   writeUInt32(this.locktime)
+  if (!exceptTimestamp) {
+    writeUInt32(Math.round(Date.now()/1000))
+  }
 
   return buffer
 }

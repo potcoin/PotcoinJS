@@ -4,12 +4,12 @@ var networks = {
   potcoin: {
     magicPrefix: '\x18Potcoin Signed Message:\n',
     bip32: {
-      public: 0x213045C1, // Ppub
-      private: 0x213045C0 // Pprv
+      public: 0x0488b21e, // Ppub
+      private: 0x0488ade4 // Pprv
     },
-    pubKeyHash: 0x38, //0xfd, // https://github.com/potcoin/potcoin/blob/master/src/script.h#L206
-    scriptHash: 0x05,
-    wif: 0xB7,
+    pubKeyHash: 55, //0xfd, // https://github.com/potcoin/potcoin/blob/master/src/script.h#L206
+    scriptHash: 5,
+    wif: 189,
     dustThreshold: 0,
     dustSoftThreshold: 100000,
     feePerKb: 100000, // https://github.com/potcoin/potcoin/blob/master/src/main.cpp#L53
